@@ -4,10 +4,20 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
 import { Titan_One } from "next/font/google"
 import Typewriter from "typewriter-effect"
+import ScrollProgressBar from "./ScrollProgressBar"
 
 const projects = [
   {
     id: "telegram-bot",
+    title: "Telegram Restaurant Finder Bot",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    tech: ["Python", "Telegram API", "Google Places API", "Render"],
+    github: "https://github.com/dgrabo/telegram-bot",
+    image: "/projects/telegram-bot/bot1.jpg"
+
+  }, 
+  {
+    id: "telegram-bst",
     title: "Telegram Restaurant Finder Bot",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     tech: ["Python", "Telegram API", "Google Places API", "Render"],
@@ -21,6 +31,7 @@ export default function Home(){
   const [selectedProject, setSelectedProject] = useState(null)
   return (
     <main>
+      <ScrollProgressBar />
       <section id="hero"
       style={{
         height: '100vh',
@@ -48,9 +59,9 @@ export default function Home(){
         <Typewriter
           options={{
             strings: [
-              "IT student",
+              "IT student.",
               "Building things.",
-              "Based in Zagreb."
+              "Learning every day."
             ],
             autoStart: true,
             loop: true,
@@ -130,7 +141,8 @@ export default function Home(){
               backgroundColor: "fff8f0",
               borderRadius: "16px",
               padding: "2.5rem",
-              boxShadow: "0 4px 20px rgba(0,0,0,0.6)"
+              boxShadow: "0 4px 20px rgba(0,0,0,0.6)",
+              marginBottom: "3rem"
             }}
           >
             <div
@@ -160,9 +172,9 @@ export default function Home(){
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity:0, height: 0 }}
                 transition={{ duration: 0.4 }}
-                style={{ overflow: "hidden" }}
+                style={{ overflow: "hidden"}}
                 >
-                  <div style={{ paddingTop: "1.5rem"}}>
+                  <div style={{ paddingTop: "3.5rem"}}>
                     <p style={{ 
                       fontSize: "1.1rem", 
                       lineHeight: 1.7, 
